@@ -10,7 +10,7 @@ pipenv install
 ## getInvestingData.py
 this program scraps `https://www.investing.com/commodities/` for gold/silver pricing and stores the data as csv ('|' separated).
 
-How to run
+How to run:
 ```
 python3 getInvestingData.py
 ```

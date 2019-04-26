@@ -1,7 +1,7 @@
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import csv
-
+from datetime import datetime
 
 ################    SUPPORT FUNCTIONS #############
 
@@ -56,3 +56,7 @@ rows = table2Arrays(table)
 writeCSV('silver', rows)
 
 ### stdout: date range of fetched data ###
+firstDate = datetime.strptime(rows[1][0], '%b %d, %Y')
+lastDate = datetime.strptime(rows[-1][0], '%b %d, %Y')
+
+print(firstDate, isoformat())
