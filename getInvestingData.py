@@ -56,7 +56,13 @@ rows = table2Arrays(table)
 writeCSV('silver', rows)
 
 ### stdout: date range of fetched data ###
-firstDate = datetime.strptime(rows[1][0], '%b %d, %Y')
-lastDate = datetime.strptime(rows[-1][0], '%b %d, %Y')
 
-print(firstDate, isoformat())
+
+def dateReformat(dateString):
+    return datetime.strptime(dateString, '%b %d, %Y').strftime('%Y-%m-%d')
+
+
+lastDate = dateReformat(rows[1][0])
+firstDate = dateReformat(rows[-1][0])
+
+print(f'date fetched from {firstDate} to {lastDate}')
